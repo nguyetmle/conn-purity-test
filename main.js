@@ -8,7 +8,7 @@ const questions = [
   'Drawn on the wall inside the tunnel between KB and Larrabee',
   'Slid down the AC in the snow',
   'Gone swimming in the Thames River',
-  'Gone skinny dippinf in the Thames River',
+  'Gone skinny dipping in the Thames River',
   'Gone swimming in arboretum',
   'Gone skinny dipping in arboretum',
   'Stayed out until sunrise on Temple Green',
