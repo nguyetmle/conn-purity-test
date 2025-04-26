@@ -1,69 +1,142 @@
 // Questions array
 const questions = [
-
+  'Pulled an all-nighter at Shain during finals',
+  'Attended a class still hungover',
+  'Missed class because of hungover',
+  "Sneaked into a class you weren't enrolled in",
+  'Draw on the wall inside the tunnel between KB and Larrabee',
+  'Slid down the AC in the snow',
+  'Went swimming in the Thames River',
+  'Stayed out until sunrise on Temple Green',
+  "Had a sleepover in friend's room",
+  'Got a haircut or hair dye in a dorm bathroom',
+  'Gone on a date at Coffee Grounds or Blue Camel',
+  'Gone stargazing on campus with your date',
+  'Matched with a Conn student on Tinder/Bumble',
+  'Flirted with someone over YikYak DM or another weird campus platform (like Moodle Message)',
+  'Taken dinnerware from the dining hall',
+  'Set off a fire alarm (accidentally or not)',
+  'Climbed on the roof of a dorm',
+  'Participated in a campus protest or rally',
+  'Hosting parties or pregames in your room beyond guest limits',
+  'Walked a stranger home at night',
+  'Had a crush on your Student Advisor',
+  'Had a campus crush you never spoke to in real life',
+  'Written someone a love letter or note (not a text!) at Conn',
+  'Rode a campus golf cart',
+  'Hidden in Shain Library until after it closed',
+  'Sneaked into the Arboretum at night',
+  'Sneaked alcohol into Floralia while underage',
+  'Gossiped about someone on YikYak',
+  'Used ChatGPT to do your entire homework',
+  'Slept in a classroom overnight',
+  'Slept in a common room overnight',
+  'Slept through an exam',
+  'Went on a date with someone from Coast Guard',
+  'Kept a pet in your dorm illegally',
+  'Skipped more than 50% of a class',
+  'Hooked up in a common room',
+  'Hooked up in a classroom or academic building after hours',
+  'Hooked up with someone from another NESCAC school visiting campus',
+  'Kissed someone at an all-campus event (Floralia, Harvestfest, etc)',
+  'Kissed someone you just met at a Conn party',
+  'Kissed multiple people at the same party',
+  'Had a secret relationship that few people knew about',
+  "Parked illegally in a faculty/staff spot and didn't get caught",
+  "Collected multiple parking tickets before registering the car",
+  "Blacked out at a dorm party",
+  "Taken a shot in Shain or an academic building",
+  "Hid alcohol in a water bottle or coffee cup to sneak into a campus event",
+  'Had to be physically carried back to your dorm after a night out',
+  "Jaywalking after a Ridge/Winch/Abbey party",
+  'Smoked marijuana on campus',
+  'Smoke hookah on campus',
+  "Smoked inside the Chapel",
+  'Hotboxed a dorm room (and maybe set off the fire alarm)',
+  'Got caught by Campo for smoking',
+  'Got high before attending class',
+  'Went skinny dipping in Arboretum',
+  'Ran from Campo',
+  'Tried to prank call Campo',
+  'Had a party shut down by Campo',
+  'Stolen a furniture item from public use (common room, classroom, Shain, etc.)',
+  'Sneaked someone into a single-gender bathroom',
+  "Stole someone else's laundry out of a dryer (accidentally or not)",
+  'Got noise complaint from your neighbor',
+  'Took a bathroom break during a self-schedule exam to Google an answer',
+  'Took a self-schedule exam for someone else',
+  'Taken a take-home exam in a full group chat helping each other',
+  "Stole someone else's Doordash/UberEats order",
+  'Played a giant game of tag or manhunt across campus at night',
+  'Played hide and seek in your dorm at night',
+  'Played strip poker (or strip any game) in a dorm room',
+  'Made up fake traditions to mess with first-years (like "Midnight Howl on Tempel Green")',
+  'Streaked across Temple Green'
   ];
 
-  // get DOM elements
-  const questionList = document.getElementById('question-list') 
-  const calculateButton = document.getElementById('calculate') 
-  const resetButton = document.getElementById("reset")
-  const scoreElement = document.getElementById("score")
-  const testSection = document.getElementById("test-section")
-  const resultSection = document.getElementById("result-section")
+console.log(questions.length);
 
-  // generate the list of questions with checkboxes
-  function generateQuestions() {
-    questionList.innerHTML = "";
+// get DOM elements
+const questionList = document.getElementById('question-list') 
+const calculateButton = document.getElementById('calculate') 
+const resetButton = document.getElementById("reset")
+const scoreElement = document.getElementById("score")
+const testSection = document.getElementById("test-section")
+const resultSection = document.getElementById("result-section")
 
-    questionList.forEach((question, index) => {
-        const listItem = document.createElement('li');
+// generate the list of questions with checkboxes
+function generateQuestions() {
+  questionList.innerHTML = "";
 
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.id = `q${index+1}`;
-        checkbox.name = `q${index+1}`;
+  questions.forEach((question, index) => {
+      const listItem = document.createElement('li');
 
-        const label = document.createElement('label');
-        label.htmlFor = `q${index+1}`;  //for attribute connects the <label> to a form input by id
-        label.textContent = question;
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.id = `q${index+1}`;
+      checkbox.name = `q${index+1}`;
 
-        listItem.appendChild(checkbox);
-        listItem.appendChild(label);
-        questionList.appendChild(listItem);
-    });
-  }
+      const label = document.createElement('label');
+      label.htmlFor = `q${index+1}`;  //for attribute connects the <label> to a form input by id
+      label.textContent = question;
 
-  // calculate purity score
-  function calculateScore() {
-    const checkboxes = questionList.querySelectorAll('input[type="checkbox"]');
-    let checkCount =  0;
+      listItem.appendChild(checkbox);
+      listItem.appendChild(label);
+      questionList.appendChild(listItem);
+  });
+}
 
-    checkboxes.forEach(checkbox =>{
-      if (checkbox instanceof HTMLInputElement && checkbox.checked) {
-        checkCount++;
-      }
-    });
+// calculate purity score
+function calculateScore() {
+  const checkboxes = questionList.querySelectorAll('input[type="checkbox"]');
+  let checkCount =  0;
 
-    const purityScore = 100 - checkCount;
+  checkboxes.forEach(checkbox =>{
+    if (checkbox instanceof HTMLInputElement && checkbox.checked) {
+      checkCount++;
+    }
+  });
 
-    // display result
-    scoreElement.textContent = purityScore.toString();
-    testSection.style.display = 'none';
-    resultSection.style.display = 'block';
-  }
+  const purityScore = 100 - checkCount;
 
-  // reset checkboxes
-  function resetCheckboxes() {
-    const checkboxes = questionList.querySelectorAll('input[type="checkbox"]');
+  // display result
+  scoreElement.textContent = purityScore.toString();
+  testSection.style.display = 'none';
+  resultSection.style.display = 'block';
+}
 
-    checkboxes.forEach(checkbox => {
-      checkbox.checked == false;
-    });
-  }
+// reset checkboxes
+function resetCheckboxes() {
+  const checkboxes = questionList.querySelectorAll('input[type="checkbox"]');
 
-  //event listener
-  calculateButton.addEventListener('click', calculateScore);
-  resetButton.addEventListener('click', resetCheckboxes);
+  checkboxes.forEach(checkbox => {
+    checkbox.checked = false;
+  });
+}
 
-  //initialize question list when page loads
-  generateQuestions();
+//event listener
+calculateButton.addEventListener('click', calculateScore);
+resetButton.addEventListener('click', resetCheckboxes);
+
+//initialize question list when page loads
+generateQuestions();
