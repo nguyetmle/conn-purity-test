@@ -1,8 +1,9 @@
 // Questions array
 const questions = [
   'Pulled an all-nighter at Shain during finals',
-  'Attended a class still hungover',
+  'Attended a class hungover',
   'Missed class because of hungover',
+  'Gone to practice hungover',
   "Sneaked into a class you weren't enrolled in",
   'Drawn on the wall inside the tunnel between KB and Larrabee',
   'Slid down the AC in the snow',
@@ -36,9 +37,10 @@ const questions = [
   'Kept a pet in your dorm illegally',
   'Skipped more than 50% of a class',
   "Made out in a locker room in AC",
+  "Flirted with someone from another school's sport team at a game",
   'Hooked up in a common room',
   'Hooked up in a classroom or academic building after hours',
-  'Hooked up with someone from another NESCAC school visiting campus',
+  'Hooked up with someone from another school visiting campus',
   'Kissed someone at an all-campus event (Floralia, Harvestfest, etc)',
   'Kissed someone you just met at a Conn party',
   'Kissed multiple people at the same party',
@@ -72,7 +74,8 @@ const questions = [
   'Played hide and seek in your dorm at night',
   'Played strip poker (or strip any game) in a dorm room',
   'Made up fake traditions to mess with first-years (like "Midnight Howl on Tempel Green")',
-  'Streaked across Temple Green'
+  'Streaked across Temple Green',
+  'Made a bet on a Conn sport game',
   ];
 
 console.log(questions.length);
