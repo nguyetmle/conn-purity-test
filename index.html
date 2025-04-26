@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conn Purity Test</title>
+  <link rel="stylesheet" href="/src/styles.css">
+</head>
+
+<body>
+  <div id="root">
+    <div class="container">
+      <header class="header">
+        <h1 class="title">
+          <span class="official">The Official</span>
+          <span class="thresher">Camel</span>
+          <span class="rice-purity">Conn Purity Test</span>
+        </h1>
+      </header>
+
+      <section class="intro">
+        <p><i>The Conn Purity Test serves as a way for students to bond and track their experiences throughout their time at the Connecticut College.
+          It's a voluntary opportunity for students to reflect on their unique university journey.</i></p>
+        <p><strong>Caution: This is not a bucket list. Completion of all items on this test will likely result in Completing all of these will likely result in meeting with Dean Arcelus, Dean Norbert, and Mary Savage.</strong></p>
+
+        <p>Click on every item you have done.
+        </p>
+      </section>
+
+      <section id="test-section">
+        <ol id="question-list">
+        </ol>
+
+        <div class="buttons">
+          <button id="calculate" class="button">Calculate My Score!</button>
+          <button id="reset" class="button">Clear checkboxes</button>
+        </div>
+      </section>
+
+      <section id="result-section" style="display: none;">
+        <h2>Your score:</h2>
+        <h1 id="score"></h1>
+
+        <div class="footer-text">
+          <p>Thank you for your submission!</p>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
